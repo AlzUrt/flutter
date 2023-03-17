@@ -1,16 +1,13 @@
 # padsou
 
-A new Flutter project.
+## Consigne
+https://lesignobles.notion.site/Flutter-b76d90feef6a45a8afc0b6ecdd44fe78
 
-## Getting Started
+## lancer l'émulateur
+``` ctrl + shift + p ``` puis ``` flutter: launch emulator ```
 
-This project is a starting point for a Flutter application.
+## lancer l'application
+``` ctrl + f5 ```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Pour sauvgarder les modifications de pubspec.yaml :
+``` flutter pub get ```
