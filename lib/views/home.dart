@@ -4,6 +4,8 @@ import 'package:padsou/components/customItem.dart';
 import 'package:padsou/components/iconBox.dart';
 import 'package:padsou/components/navigationBarBottom.dart';
 import 'package:padsou/components/textTitle.dart';
+import 'package:padsou/views/addPlan_desc.dart';
+import 'package:padsou/views/addPlan_photo.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -30,7 +32,7 @@ class AccueilState extends State<Home> {
                   children: [
                     Expanded(
                       child: Container(
-                        padding: const EdgeInsets.all(28),
+                        padding: const EdgeInsets.only(top: 50.0, left: 50.0),
                         child: textTitle(
                           title: "COUCOU TOI,",
                           subtitle: "T'es en manque de thunes ?",
@@ -208,12 +210,6 @@ class AccueilState extends State<Home> {
                 ),
               )
             ]),
-          ),
-          Positioned(
-            bottom: 0,
-            left: 0,
-            right: 0,
-            child: const NavigationBarBottom(),
           ),
         ],
       ),

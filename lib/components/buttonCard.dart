@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
+
 class CustomButtonStyle {
   static ButtonStyle title({
     Color backgroundColor = CustomColors.pink,
