@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
+
 class CustomButtonStyle {
-  ButtonStyle title({Color color = Colors.white}) {
+  static ButtonStyle title({
+    Color backgroundColor = CustomColors.pink,
+    Color textColor = Colors.white,
+  }) {
     return ElevatedButton.styleFrom(
-      primary: CustomColors.pink,
+      primary: backgroundColor,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      textStyle: CustomTextStyle.textbutton(color: color),
+      textStyle: CustomTextStyle.textbutton(color: textColor),
     );
   }
 }

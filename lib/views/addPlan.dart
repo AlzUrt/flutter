@@ -11,12 +11,37 @@ import 'package:padsou/views/addPlan_photo.dart';
 import 'package:padsou/views/home.dart';
 import 'package:padsou/views/profil.dart';
 
-class Profil extends StatefulWidget {
+class AddPlan extends StatefulWidget {
   @override
-  ProfilState createState() => ProfilState();
+  AddPlanState createState() => AddPlanState();
 }
 
-class ProfilState extends State<Profil> {
+class AddPlanState extends State<AddPlan> {
+  int _currentStep = 1;
+
+  Widget _buildStepWidget() {
+    switch (_currentStep) {
+      case 1:
+        return AddPlanDesc(
+          nextStep: _nextStep,
+          parentContext: context,
+        );
+      case 2:
+        return AddPlanPhoto();
+      default:
+        return AddPlanDesc(
+          nextStep: _nextStep,
+          parentContext: context,
+        );
+    }
+  }
+
+  void _nextStep() {
+    setState(() {
+      _currentStep++; // incrémente l'étape actuelle
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,9 +65,9 @@ class ProfilState extends State<Profil> {
                           padding: const EdgeInsets.only(
                               top: 50.0, right: 150.0, left: 50.0),
                           child: textTitle(
-                            title: "MON PROFIL",
+                            title: "AJOUTER",
                             subtitle:
-                                "Modifie tes infos affichées aux autres sur l'app",
+                                "Un bon plan pour en faire profiter les autres",
                           ),
                         ),
                       ),
@@ -50,7 +75,7 @@ class ProfilState extends State<Profil> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 110.0),
+                  padding: EdgeInsets.only(bottom: 30.0),
                   decoration: const BoxDecoration(
                     color: CustomColors.lightWhite,
                     borderRadius: BorderRadius.only(
@@ -58,44 +83,7 @@ class ProfilState extends State<Profil> {
                       topRight: Radius.circular(50),
                     ),
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(20),
-                      ),
-                      CustomInput(
-                        title: 'Mon pseudo',
-                        hintText: 'jacky74bonplan',
-                      ),
-                      CustomInput(
-                        title: "Adresse email",
-                        hintText: "jacky@gmail.com",
-                      ),
-                      CustomInput(
-                        title: "Mot de passe",
-                        hintText: "********************",
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.only(bottom: 20),
-                          child: SizedBox(
-                            width: 261,
-                            height: 56,
-                            child: ElevatedButton(
-                              onPressed: () {},
-                              style: CustomButtonStyle.title(
-                                  backgroundColor: CustomColors.lightBlue),
-                              child: const Text('Enregistrer'),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  child: _buildStepWidget(),
                 ),
               ],
             ),
