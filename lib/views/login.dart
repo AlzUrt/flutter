@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
 import 'package:padsou/views/register.dart';
-
+import 'package:padsou/components/buttonCard.dart';
 class login extends StatefulWidget {
   @override
   LoginState createState() => LoginState();
@@ -145,13 +145,10 @@ Row(
                             // TODO: Handle form submission
                           }
                         },
-                        style: ElevatedButton.styleFrom(
-                          primary: CustomColors.darkBlue,
-                          onPrimary: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                        ),
+                      style: CustomButtonStyle.title(
+                            backgroundColor: CustomColors.darkBlue,
+                            textColor: Colors.white
+                        ),  
                         child: Text('Se connecter'),
                       ),
                     ),
