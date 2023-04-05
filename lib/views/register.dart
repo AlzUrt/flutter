@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
+import 'package:padsou/views/login.dart';
 
 class register extends StatefulWidget {
   @override
@@ -163,6 +164,13 @@ class AccueilState extends State<register> {
                 ),
               ),
             ),
+
+
+
+
+
+
+
         Spacer(),
         // Texte en bas de page
          Align(
@@ -175,7 +183,12 @@ class AccueilState extends State<register> {
                   style: TextStyle(color: CustomColors.darkGrey),
                 ),
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => login()),
+                        );
+                  },
                   child: Text(
                     'Connecte-toi !',
                     style: TextStyle(color: CustomColors.darkBlue),
