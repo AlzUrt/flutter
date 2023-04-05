@@ -31,5 +31,25 @@ class CustomTextStyle {
       decoration: TextDecoration.none
       );
     }
+
+    static TextStyle textgras({Color color = Colors.white}) {
+    return TextStyle(
+      color: color,
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'inter',
+      decoration: TextDecoration.none
+      );
+    }
+
+    static TextStyle condition({Color color = Colors.white}) {
+    return TextStyle(
+      color: color,
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      fontFamily: 'inter',
+      decoration: TextDecoration.none
+      );
+    }
 }
 

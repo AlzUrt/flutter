@@ -12,7 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Padsou',
-      home: Home(),
+      home: onBoarding(),
     );
   }
 }
