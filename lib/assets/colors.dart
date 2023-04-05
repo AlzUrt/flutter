@@ -10,4 +10,5 @@ class CustomColors {
   static const darkBlue = Color(0xFF605DF5);
   static const lightGrey = Color(0xFFF2F2F2);
   static const grey = Color(0xFFBCC0CC);
+  static const white40 = Color(0x66FFFFFF);
 }
