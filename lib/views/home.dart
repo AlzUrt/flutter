@@ -96,7 +96,7 @@ class AccueilState extends State<Home> {
                 ),
                 Container(
                   height: 120,
-                  child: const Row(
+                  child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       IconBox(

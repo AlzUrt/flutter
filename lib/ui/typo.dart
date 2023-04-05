@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 
 class CustomTextStyle {
-  static TextStyle title({Color color = CustomColors.white}) {
+  static TextStyle title({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontSize: 30,
@@ -12,7 +12,7 @@ class CustomTextStyle {
       );
     }
 
-  static TextStyle textbutton({Color color = CustomColors.white}) {
+  static TextStyle textbutton({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontSize: 16,
@@ -22,7 +22,7 @@ class CustomTextStyle {
       );
     }
 
-    static TextStyle text({Color color = CustomColors.white}) {
+    static TextStyle text({Color color = Colors.white}) {
     return TextStyle(
       color: color,
       fontSize: 16,

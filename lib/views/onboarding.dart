@@ -59,7 +59,7 @@ class AccueilState extends State<onBoarding> {
                 height: 56,
                 child: ElevatedButton(
                   onPressed: () {},
-                  style: CustomButtonStyle.title(),
+                  // style: CustomButtonStyle.title(),
                   child: const Text('C’est parti !'),
                 ),
               ),
