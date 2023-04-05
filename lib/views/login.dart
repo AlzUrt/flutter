@@ -19,7 +19,7 @@ class LoginState extends State<login> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: CustomColors.lightWhite,
-      // resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: Column(
           children: [
             const SizedBox(height: 80),
