@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
 class ImageGrid extends StatelessWidget {
+  const ImageGrid({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 60), 
+      padding: const EdgeInsets.symmetric(horizontal: 60), 
 
       child: Container(
         decoration: BoxDecoration(
@@ -15,7 +16,7 @@ class ImageGrid extends StatelessWidget {
           crossAxisCount: 2,
           shrinkWrap: true,
           // cette ligne créé un bug avec le bandeau jaune et noir (le problème viens du vertical padding)
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           mainAxisSpacing: 10,
           crossAxisSpacing: 10,
           children: [
@@ -48,7 +49,7 @@ class ImageGrid extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 boldText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 10
                   ),
@@ -58,7 +59,7 @@ class ImageGrid extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 8.0),
               child: Text(
                 normalText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 8
                   ),
               ),

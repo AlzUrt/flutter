@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:padsou/assets/colors.dart';
-
 class CustomTextStyle {
   static TextStyle title({Color color = Colors.white}) {
     return TextStyle(

@@ -2,9 +2,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:padsou/firebase/firebase_options.dart';
-import 'package:padsou/views/login.dart';
 import 'package:firebase_analytics/firebase_analytics.dart';
-import 'package:firebase_analytics/observer.dart';
+import 'package:padsou/views/onboarding.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,12 +11,10 @@ void main() async {
     options: DefaultFirebaseOptions.currentPlatform,
   );
   FirebaseAnalytics analytics = FirebaseAnalytics.instance;
-  String? token = await FirebaseMessaging.instance.getToken();
-  print('User FCM Token: $token');
 
   FirebaseMessaging messaging = FirebaseMessaging.instance;
 
-  NotificationSettings settings = await messaging.requestPermission(
+  await messaging.requestPermission(
     alert: true,
     announcement: false,
     badge: true,
@@ -27,14 +24,12 @@ void main() async {
     sound: true,
   );
 
-  print('User granted permission: ${settings.authorizationStatus}');
-
   FirebaseMessaging.onMessage.listen((RemoteMessage message) {
     RemoteNotification? notification = message.notification;
     AndroidNotification? android = message.notification?.android;
 
     if (notification != null && android != null) {
-      print('Message title: ${notification.title}, body: ${notification.body}');
+      // print('Message title: ${notification.title}, body: ${notification.body}');
     }
   });
   runApp(MyApp(analytics: analytics));
@@ -43,7 +38,8 @@ void main() async {
 class MyApp extends StatelessWidget {
   final FirebaseAnalytics analytics;
 
-  MyApp({required this.analytics});
+  const MyApp({Key? key, required this.analytics}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -52,7 +48,7 @@ class MyApp extends StatelessWidget {
       navigatorObservers: [
         FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance),
       ],
-      home: login(),
+      home: const OnBoarding(),
     );
   }
 }

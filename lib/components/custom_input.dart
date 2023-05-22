@@ -30,7 +30,7 @@ class CustomInput extends StatelessWidget {
           ),
         ),
         Container(
-          padding: EdgeInsets.all(20),
+          padding: const EdgeInsets.all(20),
           child: TextField(
             decoration: InputDecoration(
               hintText: hintText,

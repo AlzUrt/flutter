@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/buttonCard.dart';
-import 'package:padsou/components/customInput.dart';
-import 'package:padsou/components/textTitle.dart';
+import 'package:padsou/components/button_card.dart';
+import 'package:padsou/components/custom_input.dart';
+import 'package:padsou/components/text_title.dart';
 
 class Profil extends StatefulWidget {
+
+  const Profil({Key? key}) : super(key: key);
   @override
   ProfilState createState() => ProfilState();
 }
@@ -32,7 +34,7 @@ class ProfilState extends State<Profil> {
                         child: Container(
                           padding: const EdgeInsets.only(
                               top: 50.0, right: 150.0, left: 50.0),
-                          child: textTitle(
+                          child: const TextTitle(
                             title: "MON PROFIL",
                             subtitle:
                                 "Modifie tes infos affichées aux autres sur l'app",

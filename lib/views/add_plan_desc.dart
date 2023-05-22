@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/buttonCard.dart';
-import 'package:padsou/components/customInput.dart';
-import 'package:padsou/components/customItem.dart';
-import 'package:padsou/components/iconBox.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
-import 'package:padsou/components/textTitle.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
-import 'package:padsou/views/home.dart';
-import 'package:padsou/views/profil.dart';
+import 'package:padsou/components/button_card.dart';
+import 'package:padsou/components/custom_input.dart';
 
 class AddPlanDesc extends StatefulWidget {
   final Function nextStep;
@@ -40,16 +32,16 @@ class AddPlanDescState extends State<AddPlanDesc> {
         const Padding(
           padding: EdgeInsets.all(20),
         ),
-        CustomInput(
+        const CustomInput(
           title: 'Titre',
           hintText: 'Abonnement 1 an de Basic-Fit',
         ),
-        CustomInput(
+        const CustomInput(
           title: "Description",
           hintText: "Ne soit pas trop bavard, on s'en fou, va à l'essentiel",
           maxLines: 5,
         ),
-        CustomInput(
+        const CustomInput(
           title: "Lien",
           hintText: "www.lienverstonbonplan.com",
         ),

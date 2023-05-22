@@ -14,10 +14,10 @@ class NavigationBarBottom extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  _NavigationBarBottomState createState() => _NavigationBarBottomState();
+  NavigationBarBottomState createState() => NavigationBarBottomState();
 }
 
-class _NavigationBarBottomState extends State<NavigationBarBottom> {
+class NavigationBarBottomState extends State<NavigationBarBottom> {
   int _selectedIndex = 0;
 
   @override

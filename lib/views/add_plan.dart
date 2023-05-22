@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/buttonCard.dart';
-import 'package:padsou/components/customInput.dart';
-import 'package:padsou/components/customItem.dart';
-import 'package:padsou/components/iconBox.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
-import 'package:padsou/components/textTitle.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
-import 'package:padsou/views/home.dart';
-import 'package:padsou/views/profil.dart';
+import 'package:padsou/components/text_title.dart';
+import 'package:padsou/views/add_plan_desc.dart';
+import 'package:padsou/views/add_plan_photo.dart';
 
 class AddPlan extends StatefulWidget {
+  const AddPlan({Key? key}) : super(key: key);
   @override
   AddPlanState createState() => AddPlanState();
 }
@@ -27,7 +21,7 @@ class AddPlanState extends State<AddPlan> {
           parentContext: context,
         );
       case 2:
-        return AddPlanPhoto();
+        return const AddPlanPhoto();
       default:
         return AddPlanDesc(
           nextStep: _nextStep,
@@ -49,7 +43,7 @@ class AddPlanState extends State<AddPlan> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: EdgeInsets.only(bottom: 25),
+            padding:const EdgeInsets.only(bottom: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -64,7 +58,7 @@ class AddPlanState extends State<AddPlan> {
                         child: Container(
                           padding: const EdgeInsets.only(
                               top: 50.0, right: 150.0, left: 50.0),
-                          child: textTitle(
+                          child: const TextTitle(
                             title: "AJOUTER",
                             subtitle:
                                 "Un bon plan pour en faire profiter les autres",
@@ -75,7 +69,7 @@ class AddPlanState extends State<AddPlan> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 30.0),
+                  padding:const EdgeInsets.only(bottom: 30.0),
                   decoration: const BoxDecoration(
                     color: CustomColors.lightWhite,
                     borderRadius: BorderRadius.only(

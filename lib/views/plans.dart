@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
-import 'package:padsou/views/addPlan.dart';
+import 'package:padsou/components/navigation_bar_bottom.dart';
+import 'package:padsou/views/add_plan.dart';
 import 'package:padsou/views/profil.dart';
 import 'package:padsou/views/home.dart';
 
@@ -9,16 +9,16 @@ class Plans extends StatefulWidget {
   const Plans({Key? key}) : super(key: key);
 
   @override
-  _PlansState createState() => _PlansState();
+  PlansState createState() => PlansState();
 }
 
-class _PlansState extends State<Plans> {
+class PlansState extends State<Plans> {
   int _currentIndex = 0;
 
   final List<Widget> _pages = [
-    Home(),
-    AddPlan(),
-    Profil(),
+    const Home(),
+    const AddPlan(),
+    const Profil(),
   ];
 
   @override

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:padsou/components/ImageGrid.dart';
+import 'package:padsou/components/image_grid.dart';
 import 'package:padsou/assets/colors.dart';
 
 class MyCarousel extends StatefulWidget {
+  const MyCarousel({Key? key}) : super(key: key);
+
   @override
-  _MyCarouselState createState() => _MyCarouselState();
+  MyCarouselState createState() => MyCarouselState();
 }
 
-class _MyCarouselState extends State<MyCarousel> {
+class MyCarouselState extends State<MyCarousel> {
 
   final List<Widget> items = [
-    ImageGrid(), ImageGrid(), ImageGrid()
+    const ImageGrid(), const ImageGrid(),const ImageGrid()
     //Ajouter ici les deux autres éléments
   ];
 
@@ -30,7 +32,7 @@ class _MyCarouselState extends State<MyCarousel> {
               (index) => Container(
                 width: 25,
                 height: 5,
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
+                margin: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 2.0),
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(10),
                   color: _current == index ? Colors.white : CustomColors.white40,

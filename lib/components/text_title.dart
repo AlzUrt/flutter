@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class textTitle extends StatelessWidget {
+class TextTitle extends StatelessWidget {
   final String? title;
   final String? subtitle;
 
-  textTitle({this.title, this.subtitle});
+  const TextTitle({Key? key, this.title, this.subtitle}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +14,11 @@ class textTitle extends StatelessWidget {
         Text(
           title!,
           style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24.0,
-              color: Colors.white,
-              fontFamily: 'Integral'),
+            fontWeight: FontWeight.bold,
+            fontSize: 24.0,
+            color: Colors.white,
+            fontFamily: 'Integral',
+          ),
         ),
         const SizedBox(height: 8.0),
         Text(

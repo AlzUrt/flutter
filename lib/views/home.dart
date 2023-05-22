@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/customItem.dart';
-import 'package:padsou/components/iconBox.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
-import 'package:padsou/components/textTitle.dart';
+import 'package:padsou/components/custom_item.dart';
+import 'package:padsou/components/icon_box.dart';
+import 'package:padsou/components/text_title.dart';
 import 'package:padsou/firebase/firebase_listener.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
 import 'package:padsou/views/login.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
   @override
   AccueilState createState() => AccueilState();
 }
@@ -30,7 +28,7 @@ class AccueilState extends State<Home> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: EdgeInsets.only(bottom: 25),
+            padding:const EdgeInsets.only(bottom: 25),
             child:
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
               const SizedBox(
@@ -43,7 +41,7 @@ class AccueilState extends State<Home> {
                     Expanded(
                       child: Container(
                         padding: const EdgeInsets.only(top: 50.0, left: 50.0),
-                        child: textTitle(
+                        child: const TextTitle(
                           title: "COUCOU TOI,",
                           subtitle: "T'es en manque de thunes ?",
                         ),
@@ -74,16 +72,16 @@ class AccueilState extends State<Home> {
                           // Redirection vers la vue de connexion
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => login()),
+                            MaterialPageRoute(builder: (context) => const Login()),
                           );
                         },
-                        child: Text('Déconnexion'),
+                        child:const Text('Déconnexion'),
                       ),
                   ],
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(20),
+                padding:const EdgeInsets.all(20),
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Cherche un bon plan',
@@ -113,7 +111,7 @@ class AccueilState extends State<Home> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.only(bottom: 30.0),
+                padding:const EdgeInsets.only(bottom: 30.0),
                 decoration: const BoxDecoration(
                   color: CustomColors.lightWhite,
                   borderRadius: BorderRadius.only(
@@ -129,37 +127,37 @@ class AccueilState extends State<Home> {
                     const Padding(
                       padding: EdgeInsets.all(20),
                     ),
-                    Container(
-                      height: 120,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconBox(
-                            iconData: Icons.shopping_bag_outlined,
-                            backgroundColor: CustomColors.darkBlue,
-                            label: 'Courses',
-                          ),
-                          SizedBox(width: 10),
-                          IconBox(
-                            iconData: Icons.directions_run_outlined,
-                            backgroundColor: CustomColors.lightRed,
-                            label: 'Sport',
-                          ),
-                          SizedBox(width: 10),
-                          IconBox(
-                            iconData: Icons.train_outlined,
-                            backgroundColor: CustomColors.skyBlue,
-                            label: 'Trains',
-                          ),
-                          SizedBox(width: 10),
-                          IconBox(
-                            iconData: Icons.celebration_outlined,
-                            backgroundColor: CustomColors.lightSkyBlue,
-                            label: 'Soirées',
-                          ),
-                        ],
-                      ),
-                    ),
+                    SizedBox(
+  height: 120,
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: const [
+      IconBox(
+        iconData: Icons.shopping_bag_outlined,
+        backgroundColor: CustomColors.darkBlue,
+        label: 'Courses',
+      ),
+      SizedBox(width: 10),
+      IconBox(
+        iconData: Icons.directions_run_outlined,
+        backgroundColor: CustomColors.lightRed,
+        label: 'Sport',
+      ),
+      SizedBox(width: 10),
+      IconBox(
+        iconData: Icons.train_outlined,
+        backgroundColor: CustomColors.skyBlue,
+        label: 'Trains',
+      ),
+      SizedBox(width: 10),
+      IconBox(
+        iconData: Icons.celebration_outlined,
+        backgroundColor: CustomColors.lightSkyBlue,
+        label: 'Soirées',
+      ),
+    ],
+  ),
+),
                     Padding(
                       padding: const EdgeInsets.symmetric(
                           vertical: 0, horizontal: 10),
@@ -185,53 +183,52 @@ class AccueilState extends State<Home> {
                         ],
                       ),
                     ),
-                    Container(
-                      child: GridView.count(
-                        shrinkWrap: true,
-                        physics: const NeverScrollableScrollPhysics(),
-                        crossAxisCount: 2,
-                        crossAxisSpacing: 10,
-                        mainAxisSpacing: 10,
-                        children: const [
-                          CustomGridItem(
-                            image: 'lib/assets/images/image1.png',
-                            logo: 'lib/assets/images/logo1.png',
-                            title: 'Abonnement 1 an',
-                            description: '2 mois offerts',
-                          ),
-                          CustomGridItem(
-                            image: 'lib/assets/images/image2.png',
-                            logo: 'lib/assets/images/logo2.png',
-                            title: 'Le grand barathon',
-                            description: '1 verre acheté = 1 offert',
-                          ),
-                          CustomGridItem(
-                            image: 'lib/assets/images/image3.png',
-                            logo: 'lib/assets/images/logo3.png',
-                            title: 'Garantie appart',
-                            description: 'Pas besoin de garants',
-                          ),
-                          CustomGridItem(
-                            image: 'lib/assets/images/image4.png',
-                            logo: 'lib/assets/images/logo4.png',
-                            title: 'Giga MAXI tacos',
-                            description: '5€99, dépêche-toi !',
-                          ),
-                          CustomGridItem(
-                            image: 'lib/assets/images/image1.png',
-                            logo: 'lib/assets/images/logo1.png',
-                            title: 'Abonnement 1 an',
-                            description: '2 mois offerts',
-                          ),
-                          CustomGridItem(
-                            image: 'lib/assets/images/image1.png',
-                            logo: 'lib/assets/images/logo1.png',
-                            title: 'Abonnement 1 an',
-                            description: '2 mois offerts',
-                          ),
-                        ],
-                      ),
-                    ),
+                    GridView.count(
+  shrinkWrap: true,
+  physics: const NeverScrollableScrollPhysics(),
+  crossAxisCount: 2,
+  crossAxisSpacing: 10,
+  mainAxisSpacing: 10,
+  children: const [
+    CustomGridItem(
+      image: 'lib/assets/images/image1.png',
+      logo: 'lib/assets/images/logo1.png',
+      title: 'Abonnement 1 an',
+      description: '2 mois offerts',
+    ),
+    CustomGridItem(
+      image: 'lib/assets/images/image2.png',
+      logo: 'lib/assets/images/logo2.png',
+      title: 'Le grand barathon',
+      description: '1 verre acheté = 1 offert',
+    ),
+    CustomGridItem(
+      image: 'lib/assets/images/image3.png',
+      logo: 'lib/assets/images/logo3.png',
+      title: 'Garantie appart',
+      description: 'Pas besoin de garants',
+    ),
+    CustomGridItem(
+      image: 'lib/assets/images/image4.png',
+      logo: 'lib/assets/images/logo4.png',
+      title: 'Giga MAXI tacos',
+      description: '5€99, dépêche-toi !',
+    ),
+    CustomGridItem(
+      image: 'lib/assets/images/image1.png',
+      logo: 'lib/assets/images/logo1.png',
+      title: 'Abonnement 1 an',
+      description: '2 mois offerts',
+    ),
+    CustomGridItem(
+      image: 'lib/assets/images/image1.png',
+      logo: 'lib/assets/images/logo1.png',
+      title: 'Abonnement 1 an',
+      description: '2 mois offerts',
+    ),
+  ],
+)
+
                   ],
                 ),
               )

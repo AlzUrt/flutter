@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
-import 'package:padsou/components/buttonCard.dart';
+import 'package:padsou/components/button_card.dart';
 import 'package:padsou/components/slider/slider.dart';
 import 'package:padsou/views/register.dart';
 
-class onBoarding extends StatefulWidget {
+class OnBoarding extends StatefulWidget {
+  const OnBoarding({Key? key}) : super(key: key);
   @override
   AccueilState createState() => AccueilState();
 }
 
-class AccueilState extends State<onBoarding> {
+class AccueilState extends State<OnBoarding> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,12 +37,12 @@ class AccueilState extends State<onBoarding> {
           ),
             const Spacer(),
           Column(
-              children: [
+              children: const [
                 // Slider
                 MyCarousel(),
-                const SizedBox(height: 25),
+                 SizedBox(height: 25),
                 // Texte des bons plans
-                const Padding(
+                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 95),
                   child: Text(
                     'Accède aux 500 bons plans qu’on te propose chaque mois',
@@ -66,7 +67,7 @@ class AccueilState extends State<onBoarding> {
                     onPressed: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => register()),
+                          MaterialPageRoute(builder: (context) => const  Register()),
                         );
                     },
                     style: CustomButtonStyle.title(),

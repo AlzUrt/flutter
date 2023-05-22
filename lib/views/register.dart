@@ -3,14 +3,15 @@ import 'package:padsou/assets/colors.dart';
 import 'package:padsou/firebase/firebase_listener.dart';
 import 'package:padsou/ui/typo.dart';
 import 'package:padsou/views/login.dart';
-import 'package:padsou/components/buttonCard.dart';
+import 'package:padsou/components/button_card.dart';
 
-class register extends StatefulWidget {
+class Register extends StatefulWidget {
+  const Register({Key? key}) : super(key: key);
   @override
   AccueilState createState() => AccueilState();
 }
 
-class AccueilState extends State<register> {
+class AccueilState extends State<Register> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
@@ -50,7 +51,7 @@ class AccueilState extends State<register> {
             ],
           ),
 
-          Spacer(),
+          const Spacer(),
           // Formulaire
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -170,7 +171,7 @@ class AccueilState extends State<register> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => login()),
+                      MaterialPageRoute(builder: (context) => const Login()),
                     );
                   },
                   child: const Text(

@@ -17,15 +17,15 @@ Future<UserCredential?> signUp(String email, String password) async {
     return userCredential;
   } on FirebaseAuthException catch (e) {
     if (e.code == 'weak-password') {
-      print('Le mot de passe est trop faible.');
+      // print('Le mot de passe est trop faible.');
     } else if (e.code == 'email-already-in-use') {
-      print('Cet e-mail est déjà utilisé par un autre compte.');
+      // print('Cet e-mail est déjà utilisé par un autre compte.');
     }
     // Gérer d'autres erreurs Firebase ici
 
     return null;
   } catch (e) {
-    print(e.toString());
+    // print(e.toString());
     return null;
   }
 }
@@ -88,5 +88,5 @@ Future<void> signOut() async {
   // Enregistrer l'événement d'analyse pour la déconnexion
   await FirebaseAnalytics.instance.logEvent(name: 'sign_out');
 
-  print('Utilisateur déconnecté.');
+  // print('Utilisateur déconnecté.');
 }

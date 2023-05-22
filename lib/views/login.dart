@@ -1,23 +1,21 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/firebase/firebase_listener.dart';
 import 'package:padsou/ui/typo.dart';
 import 'package:padsou/views/plans.dart';
 import 'package:padsou/views/register.dart';
-import 'package:padsou/components/buttonCard.dart';
+import 'package:padsou/components/button_card.dart';
 
-class login extends StatefulWidget {
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
   @override
   LoginState createState() => LoginState();
 }
 
-class LoginState extends State<login> {
+class LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  final TextEditingController _confirmPasswordController =
-      TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -112,7 +110,7 @@ class LoginState extends State<login> {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => register()),
+                            MaterialPageRoute(builder: (context) => const Register()),
                           );
                         },
                         child: const Text(
@@ -134,13 +132,12 @@ class LoginState extends State<login> {
                         String email = _emailController.text;
                         String password = _passwordController.text;
                         signIn(email, password);
-                        if (UserCredential != null) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                                 builder: (context) => const Plans()),
                           );
-                        }
+                        
                       },
                       style: CustomButtonStyle.title(
                           backgroundColor: CustomColors.darkBlue,
@@ -167,7 +164,7 @@ class LoginState extends State<login> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => register()),
+                      MaterialPageRoute(builder: (context) => const Register()),
                     );
                   },
                   child: const Text(

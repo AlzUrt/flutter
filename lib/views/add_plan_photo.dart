@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
-import 'package:padsou/components/buttonCard.dart';
-import 'package:padsou/components/customInput.dart';
-import 'package:padsou/components/customItem.dart';
-import 'package:padsou/components/iconBox.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
-import 'package:padsou/components/textTitle.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
+import 'package:padsou/components/button_card.dart';
 
 class AddPlanPhoto extends StatefulWidget {
+  const AddPlanPhoto({Key? key}) : super(key: key);
+
   @override
   AddPlanPhotoState createState() => AddPlanPhotoState();
 }
@@ -18,7 +13,7 @@ class AddPlanPhotoState extends State<AddPlanPhoto> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(bottom: 150.0),
+      padding: const EdgeInsets.only(bottom: 150.0),
       decoration: const BoxDecoration(
         color: CustomColors.lightWhite,
         borderRadius: BorderRadius.only(
@@ -37,25 +32,26 @@ class AddPlanPhotoState extends State<AddPlanPhoto> {
             "Photo du bon plan",
             textAlign: TextAlign.center,
             style: TextStyle(
-                fontFamily: "Integral",
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
+              fontFamily: "Integral",
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Padding(
-            padding: EdgeInsets.all(50),
+            padding: const EdgeInsets.all(50),
             child: SizedBox(
               height: 200,
               width: 200,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  primary: CustomColors.lightBlue,
-                  onPrimary: Colors.white,
+                  backgroundColor: CustomColors.lightBlue, // Use backgroundColor instead of primary
+                  foregroundColor: Colors.white, // Use foregroundColor instead of onPrimary
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                child: Icon(
+                child: const Icon(
                   Icons.add,
                   color: Colors.white,
                   size: 80,
