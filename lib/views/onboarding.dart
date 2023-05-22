@@ -3,7 +3,6 @@ import 'package:padsou/assets/colors.dart';
 import 'package:padsou/ui/typo.dart';
 import 'package:padsou/components/buttonCard.dart';
 import 'package:padsou/components/slider/slider.dart';
-import 'package:padsou/components/ImageGrid.dart';
 import 'package:padsou/views/register.dart';
 
 class onBoarding extends StatefulWidget {

@@ -2,14 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/components/buttonCard.dart';
 import 'package:padsou/components/customInput.dart';
-import 'package:padsou/components/customItem.dart';
-import 'package:padsou/components/iconBox.dart';
-import 'package:padsou/components/navigationBarBottom.dart';
 import 'package:padsou/components/textTitle.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
-import 'package:padsou/views/home.dart';
-import 'package:padsou/views/profil.dart';
 
 class Profil extends StatefulWidget {
   @override
@@ -24,7 +17,7 @@ class ProfilState extends State<Profil> {
       body: Stack(
         children: [
           SingleChildScrollView(
-            padding: EdgeInsets.only(bottom: 25),
+            padding: const EdgeInsets.only(bottom: 25),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -50,7 +43,7 @@ class ProfilState extends State<Profil> {
                   ),
                 ),
                 Container(
-                  padding: EdgeInsets.only(bottom: 110.0),
+                  padding: const EdgeInsets.only(bottom: 110.0),
                   decoration: const BoxDecoration(
                     color: CustomColors.lightWhite,
                     borderRadius: BorderRadius.only(
@@ -66,15 +59,15 @@ class ProfilState extends State<Profil> {
                       const Padding(
                         padding: EdgeInsets.all(20),
                       ),
-                      CustomInput(
+                      const CustomInput(
                         title: 'Mon pseudo',
                         hintText: 'jacky74bonplan',
                       ),
-                      CustomInput(
+                      const CustomInput(
                         title: "Adresse email",
                         hintText: "jacky@gmail.com",
                       ),
-                      CustomInput(
+                      const CustomInput(
                         title: "Mot de passe",
                         hintText: "********************",
                       ),

@@ -4,8 +4,10 @@ import 'package:padsou/components/customItem.dart';
 import 'package:padsou/components/iconBox.dart';
 import 'package:padsou/components/navigationBarBottom.dart';
 import 'package:padsou/components/textTitle.dart';
+import 'package:padsou/firebase/firebase_listener.dart';
 import 'package:padsou/views/addPlan_desc.dart';
 import 'package:padsou/views/addPlan_photo.dart';
+import 'package:padsou/views/login.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -13,6 +15,14 @@ class Home extends StatefulWidget {
 }
 
 class AccueilState extends State<Home> {
+  bool _showLogoutButton = false;
+
+  void _toggleLogoutButton() {
+    setState(() {
+      _showLogoutButton = !_showLogoutButton;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,20 +49,36 @@ class AccueilState extends State<Home> {
                         ),
                       ),
                     ),
-                    Container(
-                      width: 50,
-                      height: 50,
-                      margin: const EdgeInsets.only(right: 20),
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        image: DecorationImage(
-                          image: AssetImage(
-                            'lib/assets/images/imageProfil.png',
+                    GestureDetector(
+                      onTap: _toggleLogoutButton,
+                      child: Container(
+                        width: 50,
+                        height: 50,
+                        margin: const EdgeInsets.only(right: 20),
+                        decoration: const BoxDecoration(
+                          shape: BoxShape.circle,
+                          image: DecorationImage(
+                            image: AssetImage(
+                              'lib/assets/images/imageProfil.png',
+                            ),
+                            fit: BoxFit.cover,
                           ),
-                          fit: BoxFit.cover,
                         ),
                       ),
                     ),
+                    if (_showLogoutButton)
+                      ElevatedButton(
+                        onPressed: () {
+                          // Déconnexion de l'utilisateur
+                          signOut();
+                          // Redirection vers la vue de connexion
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => login()),
+                          );
+                        },
+                        child: Text('Déconnexion'),
+                      ),
                   ],
                 ),
               ),

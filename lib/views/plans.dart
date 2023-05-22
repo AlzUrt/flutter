@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:padsou/assets/colors.dart';
 import 'package:padsou/components/navigationBarBottom.dart';
 import 'package:padsou/views/addPlan.dart';
-import 'package:padsou/views/addPlan_desc.dart';
-import 'package:padsou/views/addPlan_photo.dart';
 import 'package:padsou/views/profil.dart';
 import 'package:padsou/views/home.dart';
 
@@ -65,7 +63,7 @@ class _PlansState extends State<Plans> {
                           ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.home,
                         ),
                       ),
@@ -85,7 +83,7 @@ class _PlansState extends State<Plans> {
                           ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.add_circle_outlined,
                         ),
                       ),
@@ -105,7 +103,7 @@ class _PlansState extends State<Plans> {
                           ),
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: Icon(
+                        child: const Icon(
                           Icons.account_circle,
                         ),
                       ),
